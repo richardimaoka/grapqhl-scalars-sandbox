@@ -1,20 +1,12 @@
 import { ApolloServer, gql } from "apollo-server";
+import * as fs from "fs";
 import {
   NonNegativeIntResolver,
   typeDefs as scalarTypeDefs,
 } from "graphql-scalars";
 
 const typeDefs = gql`
-  scalar NonNegativeInt
-
-  type Book {
-    title: String
-    author: String
-  }
-  type Query {
-    books: [Book]
-    nint: NonNegativeInt
-  }
+  ${fs.readFileSync(__dirname.concat("/schema.gql"), "utf8")}
 `;
 
 const books = [
