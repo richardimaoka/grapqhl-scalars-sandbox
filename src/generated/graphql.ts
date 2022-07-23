@@ -11,7 +11,7 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  NonNegativeInt: any;
+  NonNegativeInt: string;
 };
 
 export type Book = {
